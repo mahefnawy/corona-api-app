@@ -1,12 +1,17 @@
 <template>
   <div class="">
     <h1>{{ msg }}</h1>
+     <SwitchRadio/>
   </div>
 </template>
 
 <script>
+import SwitchRadio from './SwitchRadio.vue';
 export default {
   name: 'MainPage',
+  components: {
+    SwitchRadio
+  },
   props: {
     msg: String
   }
