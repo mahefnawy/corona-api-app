@@ -1,5 +1,5 @@
 # corona-api-app
-
+This project is created by VueJS/Bootstrap/AntDesign
 ## Project setup
 ```
 npm install
