@@ -18,7 +18,7 @@
 <script>
 import { countryList } from '../utils/countryList.js';
 const OPTIONS = countryList.map((obj) => {
-    return obj.name;
+    return obj.Country;
 });
 export default {
     data() {
@@ -34,6 +34,7 @@ export default {
     methods: {
         handleChange(selectedItems) {
             this.selectedItems = selectedItems;
+            this.$emit('selected', selectedItems);
         },
     },
 };

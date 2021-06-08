@@ -2,7 +2,7 @@
     <div class="">
         <h1>{{ msg }}</h1>
         <SwitchRadio @clicked="onSwitchViewClick" />
-        <CountrySelect />
+        <CountrySelect @selected="onSelectCountries" />
         <DataTable v-if="currentView === 'table'" />
         <h1 v-else>Graph</h1>
     </div>
@@ -16,6 +16,8 @@ export default {
     data() {
         return {
             currentView: 'table',
+            selected: [],
+            apiData: '',
         };
     },
     name: 'MainPage',
@@ -27,9 +29,22 @@ export default {
     props: {
         msg: String,
     },
+    beforeMount() {
+        this.getData();
+    },
     methods: {
         onSwitchViewClick(value) {
             this.currentView = value;
+        },
+        onSelectCountries(value) {
+            this.selected = value;
+            console.log(this.selected);
+        },
+        async getData() {
+            const res = await fetch('https://api.covid19api.com/summary');
+            const data = await res.json();
+            this.apiData = data;
+            console.log(this.apiData);
         },
     },
 };
