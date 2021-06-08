@@ -34,7 +34,6 @@ export default {
     methods: {
         handleChange(selectedItems) {
             this.selectedItems = selectedItems;
-            console.log(this.selectedItems);
         },
     },
 };

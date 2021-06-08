@@ -3,7 +3,7 @@
         <h1>{{ msg }}</h1>
         <SwitchRadio @clicked="onSwitchViewClick" />
         <CountrySelect />
-        <h1 v-if="currentView === 'table'">Table</h1>
+        <DataTable v-if="currentView === 'table'" />
         <h1 v-else>Graph</h1>
     </div>
 </template>
@@ -11,6 +11,7 @@
 <script>
 import SwitchRadio from './SwitchRadio.vue';
 import CountrySelect from './CountrySelect.vue';
+import DataTable from './DataTable.vue';
 export default {
     data() {
         return {
@@ -21,6 +22,7 @@ export default {
     components: {
         SwitchRadio,
         CountrySelect,
+        DataTable,
     },
     props: {
         msg: String,
