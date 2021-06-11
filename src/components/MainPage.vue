@@ -3,7 +3,11 @@
         <h1>{{ msg }}</h1>
         <SwitchRadio @clicked="onSwitchViewClick" />
         <CountrySelect @selected="onSelectCountries" />
-        <DataTable v-if="currentView === 'table'" />
+        <DataTable
+            v-if="currentView === 'table'"
+            v-bind:tableData="this.tableData"
+            v-bind:tableLoading="this.tableLoading"
+        />
         <h1 v-else>Graph</h1>
     </div>
 </template>
@@ -17,7 +21,9 @@ export default {
         return {
             currentView: 'table',
             selected: [],
-            apiData: '',
+            apiData: [],
+            tableData: [],
+            tableLoading: false,
         };
     },
     name: 'MainPage',
@@ -37,14 +43,35 @@ export default {
             this.currentView = value;
         },
         onSelectCountries(value) {
-            this.selected = value;
-            console.log(this.selected);
+            let allApiData = this.apiData;
+            let selectedCountries = value;
+            let tableData = [];
+            this.selected = selectedCountries;
+            this.tableLoading = true;
+
+            selectedCountries.map((countryString, selectedIndex) => {
+                allApiData.Countries.map((apiCountryObj) => {
+                    if (apiCountryObj.Country === countryString) {
+                        let countryData = {
+                            key: selectedIndex,
+                            countryName: apiCountryObj.Country,
+                            active: apiCountryObj.TotalConfirmed,
+                            deaths: apiCountryObj.TotalDeaths,
+                            recoveries: apiCountryObj.TotalRecovered,
+                        };
+
+                        tableData.push(countryData);
+                    }
+                });
+            });
+
+            this.tableData = tableData;
+            this.tableLoading = false;
         },
         async getData() {
             const res = await fetch('https://api.covid19api.com/summary');
             const data = await res.json();
             this.apiData = data;
-            console.log(this.apiData);
         },
     },
 };

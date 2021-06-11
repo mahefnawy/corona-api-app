@@ -5,11 +5,6 @@ export const countryList = [
         ISO2: 'BB',
     },
     {
-        Country: 'Gibraltar',
-        Slug: 'gibraltar',
-        ISO2: 'GI',
-    },
-    {
         Country: 'Lithuania',
         Slug: 'lithuania',
         ISO2: 'LT',
@@ -18,11 +13,6 @@ export const countryList = [
         Country: 'Malaysia',
         Slug: 'malaysia',
         ISO2: 'MY',
-    },
-    {
-        Country: 'Nauru',
-        Slug: 'nauru',
-        ISO2: 'NR',
     },
     {
         Country: 'Palestinian Territory',
@@ -45,19 +35,9 @@ export const countryList = [
         ISO2: 'LK',
     },
     {
-        Country: 'Turks and Caicos Islands',
-        Slug: 'turks-and-caicos-islands',
-        ISO2: 'TC',
-    },
-    {
         Country: 'Vanuatu',
         Slug: 'vanuatu',
         ISO2: 'VU',
-    },
-    {
-        Country: 'Wallis and Futuna Islands',
-        Slug: 'wallis-and-futuna-islands',
-        ISO2: 'WF',
     },
     {
         Country: 'Dominica',
@@ -78,11 +58,6 @@ export const countryList = [
         Country: 'Namibia',
         Slug: 'namibia',
         ISO2: 'NA',
-    },
-    {
-        Country: 'Tokelau',
-        Slug: 'tokelau',
-        ISO2: 'TK',
     },
     {
         Country: 'Guinea',
@@ -110,19 +85,9 @@ export const countryList = [
         ISO2: 'HN',
     },
     {
-        Country: 'Saint-Martin (French part)',
-        Slug: 'saint-martin-french-part',
-        ISO2: 'MF',
-    },
-    {
         Country: 'Chad',
         Slug: 'chad',
         ISO2: 'TD',
-    },
-    {
-        Country: 'Christmas Island',
-        Slug: 'christmas-island',
-        ISO2: 'CX',
     },
     {
         Country: 'Costa Rica',
@@ -185,24 +150,9 @@ export const countryList = [
         ISO2: 'BF',
     },
     {
-        Country: 'Cayman Islands',
-        Slug: 'cayman-islands',
-        ISO2: 'KY',
-    },
-    {
         Country: 'Estonia',
         Slug: 'estonia',
         ISO2: 'EE',
-    },
-    {
-        Country: 'Jersey',
-        Slug: 'jersey',
-        ISO2: 'JE',
-    },
-    {
-        Country: 'Montserrat',
-        Slug: 'montserrat',
-        ISO2: 'MS',
     },
     {
         Country: 'Oman',
@@ -290,21 +240,6 @@ export const countryList = [
         ISO2: 'JM',
     },
     {
-        Country: 'Norfolk Island',
-        Slug: 'norfolk-island',
-        ISO2: 'NF',
-    },
-    {
-        Country: 'French Southern Territories',
-        Slug: 'french-southern-territories',
-        ISO2: 'TF',
-    },
-    {
-        Country: 'Guernsey',
-        Slug: 'guernsey',
-        ISO2: 'GG',
-    },
-    {
         Country: 'Paraguay',
         Slug: 'paraguay',
         ISO2: 'PY',
@@ -315,24 +250,9 @@ export const countryList = [
         ISO2: 'TJ',
     },
     {
-        Country: 'US Minor Outlying Islands',
-        Slug: 'us-minor-outlying-islands',
-        ISO2: 'UM',
-    },
-    {
         Country: 'Uzbekistan',
         Slug: 'uzbekistan',
         ISO2: 'UZ',
-    },
-    {
-        Country: 'American Samoa',
-        Slug: 'american-samoa',
-        ISO2: 'AS',
-    },
-    {
-        Country: 'British Virgin Islands',
-        Slug: 'british-virgin-islands',
-        ISO2: 'VG',
     },
     {
         Country: 'Finland',
@@ -373,16 +293,6 @@ export const countryList = [
         Country: 'Congo (Kinshasa)',
         Slug: 'congo-kinshasa',
         ISO2: 'CD',
-    },
-    {
-        Country: 'Réunion',
-        Slug: 'réunion',
-        ISO2: 'RE',
-    },
-    {
-        Country: 'Saint-Barthélemy',
-        Slug: 'saint-barthélemy',
-        ISO2: 'BL',
     },
     {
         Country: 'Zambia',
@@ -430,21 +340,6 @@ export const countryList = [
         ISO2: 'FM',
     },
     {
-        Country: 'Puerto Rico',
-        Slug: 'puerto-rico',
-        ISO2: 'PR',
-    },
-    {
-        Country: 'Tuvalu',
-        Slug: 'tuvalu',
-        ISO2: 'TV',
-    },
-    {
-        Country: 'ALA Aland Islands',
-        Slug: 'ala-aland-islands',
-        ISO2: 'AX',
-    },
-    {
         Country: 'Afghanistan',
         Slug: 'afghanistan',
         ISO2: 'AF',
@@ -460,11 +355,6 @@ export const countryList = [
         ISO2: 'ST',
     },
     {
-        Country: 'Korea (North)',
-        Slug: 'korea-north',
-        ISO2: 'KP',
-    },
-    {
         Country: 'New Zealand',
         Slug: 'new-zealand',
         ISO2: 'NZ',
@@ -473,11 +363,6 @@ export const countryList = [
         Country: 'Turkey',
         Slug: 'turkey',
         ISO2: 'TR',
-    },
-    {
-        Country: 'Greenland',
-        Slug: 'greenland',
-        ISO2: 'GL',
     },
     {
         Country: 'Hungary',
@@ -525,16 +410,6 @@ export const countryList = [
         ISO2: 'CI',
     },
     {
-        Country: 'Guadeloupe',
-        Slug: 'guadeloupe',
-        ISO2: 'GP',
-    },
-    {
-        Country: 'Heard and Mcdonald Islands',
-        Slug: 'heard-and-mcdonald-islands',
-        ISO2: 'HM',
-    },
-    {
         Country: 'Kiribati',
         Slug: 'kiribati',
         ISO2: 'KI',
@@ -543,16 +418,6 @@ export const countryList = [
         Country: 'Mali',
         Slug: 'mali',
         ISO2: 'ML',
-    },
-    {
-        Country: 'Northern Mariana Islands',
-        Slug: 'northern-mariana-islands',
-        ISO2: 'MP',
-    },
-    {
-        Country: 'Palau',
-        Slug: 'palau',
-        ISO2: 'PW',
     },
     {
         Country: 'Myanmar',
@@ -568,16 +433,6 @@ export const countryList = [
         Country: 'Trinidad and Tobago',
         Slug: 'trinidad-and-tobago',
         ISO2: 'TT',
-    },
-    {
-        Country: 'Turkmenistan',
-        Slug: 'turkmenistan',
-        ISO2: 'TM',
-    },
-    {
-        Country: 'French Guiana',
-        Slug: 'french-guiana',
-        ISO2: 'GF',
     },
     {
         Country: 'Lao PDR',
@@ -615,11 +470,6 @@ export const countryList = [
         ISO2: 'GR',
     },
     {
-        Country: 'Guam',
-        Slug: 'guam',
-        ISO2: 'GU',
-    },
-    {
         Country: 'Guatemala',
         Slug: 'guatemala',
         ISO2: 'GT',
@@ -638,11 +488,6 @@ export const countryList = [
         Country: 'Panama',
         Slug: 'panama',
         ISO2: 'PA',
-    },
-    {
-        Country: 'Saint Helena',
-        Slug: 'saint-helena',
-        ISO2: 'SH',
     },
     {
         Country: 'Viet Nam',
@@ -665,11 +510,6 @@ export const countryList = [
         ISO2: 'TL',
     },
     {
-        Country: 'Bouvet Island',
-        Slug: 'bouvet-island',
-        ISO2: 'BV',
-    },
-    {
         Country: 'El Salvador',
         Slug: 'el-salvador',
         ISO2: 'SV',
@@ -685,16 +525,6 @@ export const countryList = [
         ISO2: 'SI',
     },
     {
-        Country: 'French Polynesia',
-        Slug: 'french-polynesia',
-        ISO2: 'PF',
-    },
-    {
-        Country: 'Hong Kong, SAR China',
-        Slug: 'hong-kong-sar-china',
-        ISO2: 'HK',
-    },
-    {
         Country: 'Madagascar',
         Slug: 'madagascar',
         ISO2: 'MG',
@@ -708,11 +538,6 @@ export const countryList = [
         Country: 'Samoa',
         Slug: 'samoa',
         ISO2: 'WS',
-    },
-    {
-        Country: 'British Indian Ocean Territory',
-        Slug: 'british-indian-ocean-territory',
-        ISO2: 'IO',
     },
     {
         Country: 'Equatorial Guinea',
@@ -733,11 +558,6 @@ export const countryList = [
         Country: 'Saint Vincent and Grenadines',
         Slug: 'saint-vincent-and-the-grenadines',
         ISO2: 'VC',
-    },
-    {
-        Country: 'Virgin Islands, US',
-        Slug: 'virgin-islands',
-        ISO2: 'VI',
     },
     {
         Country: 'Congo (Brazzaville)',
@@ -785,11 +605,6 @@ export const countryList = [
         ISO2: 'AG',
     },
     {
-        Country: 'Cocos (Keeling) Islands',
-        Slug: 'cocos-keeling-islands',
-        ISO2: 'CC',
-    },
-    {
         Country: 'Cyprus',
         Slug: 'cyprus',
         ISO2: 'CY',
@@ -805,16 +620,6 @@ export const countryList = [
         ISO2: 'LB',
     },
     {
-        Country: 'Cook Islands',
-        Slug: 'cook-islands',
-        ISO2: 'CK',
-    },
-    {
-        Country: 'Isle of Man',
-        Slug: 'isle-of-man',
-        ISO2: 'IM',
-    },
-    {
         Country: 'Libya',
         Slug: 'libya',
         ISO2: 'LY',
@@ -825,16 +630,6 @@ export const countryList = [
         ISO2: 'NL',
     },
     {
-        Country: 'New Caledonia',
-        Slug: 'new-caledonia',
-        ISO2: 'NC',
-    },
-    {
-        Country: 'Niue',
-        Slug: 'niue',
-        ISO2: 'NU',
-    },
-    {
         Country: 'Thailand',
         Slug: 'thailand',
         ISO2: 'TH',
@@ -843,16 +638,6 @@ export const countryList = [
         Country: 'Egypt',
         Slug: 'egypt',
         ISO2: 'EG',
-    },
-    {
-        Country: 'Faroe Islands',
-        Slug: 'faroe-islands',
-        ISO2: 'FO',
-    },
-    {
-        Country: 'South Georgia and the South Sandwich Islands',
-        Slug: 'south-georgia-and-the-south-sandwich-islands',
-        ISO2: 'GS',
     },
     {
         Country: 'Algeria',
@@ -895,19 +680,9 @@ export const countryList = [
         ISO2: 'PE',
     },
     {
-        Country: 'Saint Pierre and Miquelon',
-        Slug: 'saint-pierre-and-miquelon',
-        ISO2: 'PM',
-    },
-    {
         Country: 'Republic of Kosovo',
         Slug: 'kosovo',
         ISO2: 'XK',
-    },
-    {
-        Country: 'Tonga',
-        Slug: 'tonga',
-        ISO2: 'TO',
     },
     {
         Country: 'South Sudan',
@@ -940,11 +715,6 @@ export const countryList = [
         ISO2: 'SA',
     },
     {
-        Country: 'Aruba',
-        Slug: 'aruba',
-        ISO2: 'AW',
-    },
-    {
         Country: 'Swaziland',
         Slug: 'swaziland',
         ISO2: 'SZ',
@@ -953,11 +723,6 @@ export const countryList = [
         Country: 'United States of America',
         Slug: 'united-states',
         ISO2: 'US',
-    },
-    {
-        Country: 'Antarctica',
-        Slug: 'antarctica',
-        ISO2: 'AQ',
     },
     {
         Country: 'Cuba',
@@ -973,11 +738,6 @@ export const countryList = [
         Country: 'Serbia',
         Slug: 'serbia',
         ISO2: 'RS',
-    },
-    {
-        Country: 'Anguilla',
-        Slug: 'anguilla',
-        ISO2: 'AI',
     },
     {
         Country: 'Maldives',
@@ -1010,11 +770,6 @@ export const countryList = [
         ISO2: 'FR',
     },
     {
-        Country: 'Western Sahara',
-        Slug: 'western-sahara',
-        ISO2: 'EH',
-    },
-    {
         Country: 'Iraq',
         Slug: 'iraq',
         ISO2: 'IQ',
@@ -1040,24 +795,9 @@ export const countryList = [
         ISO2: 'DO',
     },
     {
-        Country: 'Macao, SAR China',
-        Slug: 'macao-sar-china',
-        ISO2: 'MO',
-    },
-    {
-        Country: 'Bermuda',
-        Slug: 'bermuda',
-        ISO2: 'BM',
-    },
-    {
         Country: 'Pakistan',
         Slug: 'pakistan',
         ISO2: 'PK',
-    },
-    {
-        Country: 'Pitcairn',
-        Slug: 'pitcairn',
-        ISO2: 'PN',
     },
     {
         Country: 'Tanzania, United Republic of',
@@ -1090,11 +830,6 @@ export const countryList = [
         ISO2: 'AM',
     },
     {
-        Country: 'Svalbard and Jan Mayen Islands',
-        Slug: 'svalbard-and-jan-mayen-islands',
-        ISO2: 'SJ',
-    },
-    {
         Country: 'Sweden',
         Slug: 'sweden',
         ISO2: 'SE',
@@ -1108,11 +843,6 @@ export const countryList = [
         Country: 'Fiji',
         Slug: 'fiji',
         ISO2: 'FJ',
-    },
-    {
-        Country: 'Martinique',
-        Slug: 'martinique',
-        ISO2: 'MQ',
     },
     {
         Country: 'Montenegro',
@@ -1145,11 +875,6 @@ export const countryList = [
         ISO2: 'MU',
     },
     {
-        Country: 'Mayotte',
-        Slug: 'mayotte',
-        ISO2: 'YT',
-    },
-    {
         Country: 'Senegal',
         Slug: 'senegal',
         ISO2: 'SN',
@@ -1168,11 +893,6 @@ export const countryList = [
         Country: 'Liechtenstein',
         Slug: 'liechtenstein',
         ISO2: 'LI',
-    },
-    {
-        Country: 'Netherlands Antilles',
-        Slug: 'netherlands-antilles',
-        ISO2: 'AN',
     },
     {
         Country: 'Croatia',

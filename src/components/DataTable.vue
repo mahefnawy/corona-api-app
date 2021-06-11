@@ -1,5 +1,9 @@
 <template>
-    <a-table :columns="tableColumns" :data-source="mockData">
+    <a-table
+        :columns="tableColumns"
+        :data-source="tableData"
+        :loading="tableLoading"
+    >
         <a slot="name" slot-scope="text">{{ text }}</a>
     </a-table>
 </template>
@@ -14,5 +18,6 @@ export default {
             tableColumns,
         };
     },
+    props: ['tableData', 'tableLoading'],
 };
 </script>
