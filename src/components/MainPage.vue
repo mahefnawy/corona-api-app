@@ -8,7 +8,8 @@
             v-bind:tableData="this.tableData"
             v-bind:tableLoading="this.tableLoading"
         />
-        <h1 v-else>Graph</h1>
+
+        <BarChart v-if="currentView === 'graph'" />
     </div>
 </template>
 
@@ -16,6 +17,7 @@
 import SwitchRadio from './SwitchRadio.vue';
 import CountrySelect from './CountrySelect.vue';
 import DataTable from './DataTable.vue';
+import BarChart from './BarChart.vue';
 export default {
     data() {
         return {
@@ -31,6 +33,7 @@ export default {
         SwitchRadio,
         CountrySelect,
         DataTable,
+        BarChart,
     },
     props: {
         msg: String,
