@@ -1,10 +1,8 @@
 <template>
-    <div id="chart">
-        <h1>graph</h1>
-
+    <div class="chart-wrapper">
         <apexchart
-            width="500"
             type="bar"
+            height="350"
             :options="chartOptions"
             :series="series"
         ></apexchart>
@@ -14,33 +12,81 @@
 export default {
     data() {
         return {
-            chartOptions: {
-                chart: {
-                    id: 'vuechart-example',
-                },
-                xaxis: {
-                    categories: [
-                        1991,
-                        1992,
-                        1993,
-                        1994,
-                        1995,
-                        1996,
-                        1997,
-                        1998,
-                    ],
-                },
-            },
             series: [
                 {
-                    name: 'series-1',
-                    data: [30, 40, 35, 50, 49, 60, 70, 91],
+                    name: 'PRODUCT A',
+                    data: [44, 55, 41, 67, 22, 43],
+                },
+                {
+                    name: 'PRODUCT B',
+                    data: [13, 23, 20, 8, 13, 27],
+                },
+                {
+                    name: 'PRODUCT C',
+                    data: [11, 17, 15, 15, 21, 14],
+                },
+                {
+                    name: 'PRODUCT D',
+                    data: [21, 7, 25, 13, 22, 8],
                 },
             ],
+            chartOptions: {
+                chart: {
+                    type: 'bar',
+                    height: 350,
+                    stacked: true,
+                    toolbar: {
+                        show: true,
+                    },
+                    zoom: {
+                        enabled: true,
+                    },
+                },
+                responsive: [
+                    {
+                        breakpoint: 480,
+                        options: {
+                            legend: {
+                                position: 'bottom',
+                                offsetX: -10,
+                                offsetY: 0,
+                            },
+                        },
+                    },
+                ],
+                plotOptions: {
+                    bar: {
+                        horizontal: false,
+                        borderRadius: 10,
+                    },
+                },
+                xaxis: {
+                    type: 'datetime',
+                    categories: [
+                        '01/01/2011 GMT',
+                        '01/02/2011 GMT',
+                        '01/03/2011 GMT',
+                        '01/04/2011 GMT',
+                        '01/05/2011 GMT',
+                        '01/06/2011 GMT',
+                    ],
+                },
+                legend: {
+                    position: 'right',
+                    offsetY: 40,
+                },
+                fill: {
+                    opacity: 1,
+                },
+            },
         };
     },
 
     props: ['tableData'],
 };
 </script>
-<style></style>
+<style>
+.chart-wrapper {
+    padding: 20px;
+}
+</style>
