@@ -9,7 +9,13 @@
             v-bind:tableLoading="this.tableLoading"
         />
 
-        <BarChart v-if="currentView === 'graph'" />
+        <BarChart
+            v-if="currentView === 'graph'"
+            v-bind:selected="this.selected"
+            v-bind:activeData="this.activeData"
+            v-bind:deathsData="this.deathsData"
+            v-bind:recoveriesData="this.recoveriesData"
+        />
     </div>
 </template>
 
@@ -26,6 +32,9 @@ export default {
             apiData: [],
             tableData: [],
             tableLoading: false,
+            activeData: [],
+            deathsData: [],
+            recoveriesData: [],
         };
     },
     name: 'MainPage',
@@ -49,6 +58,9 @@ export default {
             let allApiData = this.apiData;
             let selectedCountries = value;
             let tableData = [];
+            let activeArr = [];
+            let deathsArr = [];
+            let recoveriesArr = [];
             let totalActive = 0;
             let totalDeaths = 0;
             let totalRecoveries = 0;
@@ -68,6 +80,9 @@ export default {
                         };
 
                         tableData.push(countryData);
+                        activeArr.push(countryData.active);
+                        deathsArr.push(countryData.deaths);
+                        recoveriesArr.push(countryData.recoveries);
                     }
                 });
             });
@@ -87,8 +102,12 @@ export default {
                 };
                 tableData.push(totalDataObj);
             }
+
             this.tableData = tableData;
             this.tableLoading = false;
+            this.activeData = activeArr;
+            this.deathsData = deathsArr;
+            this.recoveriesData = recoveriesArr;
         },
         async getData() {
             const res = await fetch('https://api.covid19api.com/summary');

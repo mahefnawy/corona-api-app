@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="switch-view-wrapper">
         <a-radio-group v-model="currentView" @change="onSwitchViewClick">
             <a-radio-button value="table">
                 Table View
@@ -26,4 +26,8 @@ export default {
     },
 };
 </script>
-<style scoped></style>
+<style>
+.switch-view-wrapper {
+    padding: 20px;
+}
+</style>
