@@ -46,6 +46,10 @@ export default {
             let allApiData = this.apiData;
             let selectedCountries = value;
             let tableData = [];
+            let totalActive = 0;
+            let totalDeaths = 0;
+            let totalRecoveries = 0;
+            let totalDataObj;
             this.selected = selectedCountries;
             this.tableLoading = true;
 
@@ -65,6 +69,21 @@ export default {
                 });
             });
 
+            tableData.map((tableDataObject) => {
+                totalActive += parseInt(tableDataObject.active);
+                totalDeaths += parseInt(tableDataObject.deaths);
+                totalRecoveries += parseInt(tableDataObject.recoveries);
+            });
+            if (tableData.length > 0) {
+                totalDataObj = {
+                    key: tableData.length + 1,
+                    countryName: 'Total',
+                    active: totalActive,
+                    deaths: totalDeaths,
+                    recoveries: totalRecoveries,
+                };
+                tableData.push(totalDataObj);
+            }
             this.tableData = tableData;
             this.tableLoading = false;
         },
