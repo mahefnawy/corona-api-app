@@ -1,6 +1,7 @@
 <template>
     <div class="chart-wrapper">
         <apexchart
+            :key="selected"
             type="bar"
             height="350"
             :options="chartOptions"
@@ -14,20 +15,16 @@ export default {
         return {
             series: [
                 {
-                    name: 'PRODUCT A',
-                    data: [44, 55, 41, 67, 22, 43],
+                    name: 'Active',
+                    data: this.activeData,
                 },
                 {
-                    name: 'PRODUCT B',
-                    data: [13, 23, 20, 8, 13, 27],
+                    name: 'Deaths',
+                    data: this.deathsData,
                 },
                 {
-                    name: 'PRODUCT C',
-                    data: [11, 17, 15, 15, 21, 14],
-                },
-                {
-                    name: 'PRODUCT D',
-                    data: [21, 7, 25, 13, 22, 8],
+                    name: 'Recoveries',
+                    data: this.recoveriesData,
                 },
             ],
             chartOptions: {
@@ -61,15 +58,8 @@ export default {
                     },
                 },
                 xaxis: {
-                    type: 'datetime',
-                    categories: [
-                        '01/01/2011 GMT',
-                        '01/02/2011 GMT',
-                        '01/03/2011 GMT',
-                        '01/04/2011 GMT',
-                        '01/05/2011 GMT',
-                        '01/06/2011 GMT',
-                    ],
+                    type: 'countryNames',
+                    categories: this.selected,
                 },
                 legend: {
                     position: 'right',
@@ -81,8 +71,21 @@ export default {
             },
         };
     },
-
-    props: ['tableData'],
+    props: ['selected', 'activeData', 'deathsData', 'recoveriesData'],
+    watch: {
+        selected: function(newSelected) {
+            this.chartOptions.xaxis.categories = newSelected;
+        },
+        activeData: function(newActiveData) {
+            this.series[0].data = newActiveData;
+        },
+        deathsData: function(newDeathsData) {
+            this.series[1].data = newDeathsData;
+        },
+        recoveriesData: function(newRecoveriesData) {
+            this.series[2].data = newRecoveriesData;
+        },
+    },
 };
 </script>
 <style>
