@@ -1,5 +1,6 @@
 <template>
     <a-select
+        class="country-select"
         mode="multiple"
         placeholder="Please select country(s)"
         :value="selectedItems"
@@ -39,3 +40,8 @@ export default {
     },
 };
 </script>
+<style>
+.country-select {
+    padding: 20px;
+}
+</style>
