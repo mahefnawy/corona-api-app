@@ -3,10 +3,8 @@
         class="data-table"
         :columns="tableColumns"
         :data-source="tableData"
-        :loading="tableLoading"
         :pagination="false"
     >
-        <a slot="name" slot-scope="text">{{ text }}</a>
     </a-table>
 </template>
 <script>
@@ -18,7 +16,7 @@ export default {
             tableColumns,
         };
     },
-    props: ['tableData', 'tableLoading'],
+    props: ['tableData'],
 };
 </script>
 <style>
