@@ -53,7 +53,7 @@ export default {
             this.currentView = value;
         },
         onSelectCountries(selectedCountries) {
-            const allApiData = this.apiData;
+            const countriesApiData = this.apiData;
             let tableData = [],
                 activeArr = [],
                 deathsArr = [],
@@ -64,7 +64,7 @@ export default {
                 totalDataObj;
 
             selectedCountries.map((countryString, selectedIndex) => {
-                allApiData.Countries.map((apiCountryObj) => {
+                countriesApiData.Countries.map((apiCountryObj) => {
                     if (apiCountryObj.Country === countryString) {
                         let countryData = {
                             key: selectedIndex,
@@ -84,9 +84,9 @@ export default {
 
             if (tableData.length > 0) {
                 tableData.map((tableDataObject) => {
-                    totalActive += parseInt(tableDataObject.active);
-                    totalDeaths += parseInt(tableDataObject.deaths);
-                    totalRecoveries += parseInt(tableDataObject.recoveries);
+                    totalActive += tableDataObject.active;
+                    totalDeaths += tableDataObject.deaths;
+                    totalRecoveries += tableDataObject.recoveries;
                 });
                 totalDataObj = {
                     key: tableData.length + 1,
