@@ -5,15 +5,15 @@
         <CountrySelect @selected="onSelectCountries" />
         <DataTable
             v-if="currentView === 'table'"
-            v-bind:tableData="this.tableData"
+            v-bind:tableData="this.dataModel.tableData"
         />
 
         <BarChart
             v-if="currentView === 'graph'"
             v-bind:selected="this.selected"
-            v-bind:activeData="this.activeData"
-            v-bind:deathsData="this.deathsData"
-            v-bind:recoveriesData="this.recoveriesData"
+            v-bind:activeData="this.dataModel.activeArr"
+            v-bind:deathsData="this.dataModel.deathsArr"
+            v-bind:recoveriesData="this.dataModel.recoveriesArr"
         />
     </div>
 </template>
@@ -30,10 +30,12 @@ export default {
             currentView: 'table',
             selected: [],
             apiData: [],
-            tableData: [],
-            activeData: [],
-            deathsData: [],
-            recoveriesData: [],
+            dataModel: {
+                tableData: [],
+                activeArr: [],
+                deathsArr: [],
+                recoveriesArr: [],
+            },
         };
     },
     name: 'MainPage',
@@ -54,17 +56,12 @@ export default {
             this.currentView = value;
         },
         onSelectCountries(selectedCountries) {
-            const countriesApiData = this.apiData;
             let dataModel = dataModulatorService(
                 selectedCountries,
-                countriesApiData
+                this.apiData
             );
-
+            this.dataModel = dataModel;
             this.selected = selectedCountries;
-            this.tableData = dataModel.tableData;
-            this.activeData = dataModel.activeArr;
-            this.deathsData = dataModel.deathsArr;
-            this.recoveriesData = dataModel.recoveriesArr;
         },
         async getData() {
             const res = await fetch('https://api.covid19api.com/summary');
