@@ -23,6 +23,7 @@ import SwitchRadio from './SwitchRadio.vue';
 import CountrySelect from './CountrySelect.vue';
 import DataTable from './DataTable.vue';
 import BarChart from './BarChart.vue';
+import { dataModulatorService } from '../utils/services.js';
 export default {
     data() {
         return {
@@ -54,55 +55,16 @@ export default {
         },
         onSelectCountries(selectedCountries) {
             const countriesApiData = this.apiData;
-            let tableData = [],
-                activeArr = [],
-                deathsArr = [],
-                recoveriesArr = [],
-                totalActive = 0,
-                totalDeaths = 0,
-                totalRecoveries = 0,
-                totalDataObj;
-
-            selectedCountries.map((countryString, selectedIndex) => {
-                countriesApiData.Countries.map((apiCountryObj) => {
-                    if (apiCountryObj.Country === countryString) {
-                        let countryData = {
-                            key: selectedIndex,
-                            countryName: apiCountryObj.Country,
-                            active: apiCountryObj.TotalConfirmed,
-                            deaths: apiCountryObj.TotalDeaths,
-                            recoveries: apiCountryObj.TotalRecovered,
-                        };
-
-                        tableData.push(countryData);
-                        activeArr.push(countryData.active);
-                        deathsArr.push(countryData.deaths);
-                        recoveriesArr.push(countryData.recoveries);
-                    }
-                });
-            });
-
-            if (tableData.length > 0) {
-                tableData.map((tableDataObject) => {
-                    totalActive += tableDataObject.active;
-                    totalDeaths += tableDataObject.deaths;
-                    totalRecoveries += tableDataObject.recoveries;
-                });
-                totalDataObj = {
-                    key: tableData.length + 1,
-                    countryName: 'Total',
-                    active: totalActive,
-                    deaths: totalDeaths,
-                    recoveries: totalRecoveries,
-                };
-                tableData.push(totalDataObj);
-            }
+            let dataModel = dataModulatorService(
+                selectedCountries,
+                countriesApiData
+            );
 
             this.selected = selectedCountries;
-            this.tableData = tableData;
-            this.activeData = activeArr;
-            this.deathsData = deathsArr;
-            this.recoveriesData = recoveriesArr;
+            this.tableData = dataModel.tableData;
+            this.activeData = dataModel.activeArr;
+            this.deathsData = dataModel.deathsArr;
+            this.recoveriesData = dataModel.recoveriesArr;
         },
         async getData() {
             const res = await fetch('https://api.covid19api.com/summary');
