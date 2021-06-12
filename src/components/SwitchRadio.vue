@@ -2,10 +2,10 @@
     <div class="switch-view-wrapper">
         <a-radio-group v-model="currentView" @change="onSwitchViewClick">
             <a-radio-button value="table">
-                Table View
+                Table view
             </a-radio-button>
             <a-radio-button value="graph">
-                Graph View
+                Graph view
             </a-radio-button>
         </a-radio-group>
     </div>
