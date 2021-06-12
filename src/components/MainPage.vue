@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div class="main-page-wrapper">
         <h1>{{ msg }}</h1>
         <SwitchRadio @clicked="onSwitchViewClick" />
         <CountrySelect @selected="onSelectCountries" />
@@ -52,18 +52,16 @@ export default {
         onSwitchViewClick(value) {
             this.currentView = value;
         },
-        onSelectCountries(value) {
-            let allApiData = this.apiData;
-            let selectedCountries = value;
-            let tableData = [];
-            let activeArr = [];
-            let deathsArr = [];
-            let recoveriesArr = [];
-            let totalActive = 0;
-            let totalDeaths = 0;
-            let totalRecoveries = 0;
-            let totalDataObj;
-            this.selected = selectedCountries;
+        onSelectCountries(selectedCountries) {
+            const allApiData = this.apiData;
+            let tableData = [],
+                activeArr = [],
+                deathsArr = [],
+                recoveriesArr = [],
+                totalActive = 0,
+                totalDeaths = 0,
+                totalRecoveries = 0,
+                totalDataObj;
 
             selectedCountries.map((countryString, selectedIndex) => {
                 allApiData.Countries.map((apiCountryObj) => {
@@ -84,12 +82,12 @@ export default {
                 });
             });
 
-            tableData.map((tableDataObject) => {
-                totalActive += parseInt(tableDataObject.active);
-                totalDeaths += parseInt(tableDataObject.deaths);
-                totalRecoveries += parseInt(tableDataObject.recoveries);
-            });
             if (tableData.length > 0) {
+                tableData.map((tableDataObject) => {
+                    totalActive += parseInt(tableDataObject.active);
+                    totalDeaths += parseInt(tableDataObject.deaths);
+                    totalRecoveries += parseInt(tableDataObject.recoveries);
+                });
                 totalDataObj = {
                     key: tableData.length + 1,
                     countryName: 'Total',
@@ -100,6 +98,7 @@ export default {
                 tableData.push(totalDataObj);
             }
 
+            this.selected = selectedCountries;
             this.tableData = tableData;
             this.activeData = activeArr;
             this.deathsData = deathsArr;
@@ -116,18 +115,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-    margin: 40px 0 0;
-}
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-li {
-    display: inline-block;
-    margin: 0 10px;
-}
-a {
-    color: #42b983;
+.main-page-wrapper {
+    padding: 20px;
 }
 </style>
