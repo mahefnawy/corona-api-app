@@ -18,8 +18,8 @@
 </template>
 <script>
 import { countryList } from '../utils/countryList.js';
-const OPTIONS = countryList.map((obj) => {
-    return obj.Country;
+const OPTIONS = countryList.map((countryObj) => {
+    return countryObj.Country;
 });
 export default {
     data() {

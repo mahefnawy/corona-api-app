@@ -6,7 +6,6 @@
         <DataTable
             v-if="currentView === 'table'"
             v-bind:tableData="this.tableData"
-            v-bind:tableLoading="this.tableLoading"
         />
 
         <BarChart
@@ -31,7 +30,6 @@ export default {
             selected: [],
             apiData: [],
             tableData: [],
-            tableLoading: false,
             activeData: [],
             deathsData: [],
             recoveriesData: [],
@@ -66,7 +64,6 @@ export default {
             let totalRecoveries = 0;
             let totalDataObj;
             this.selected = selectedCountries;
-            this.tableLoading = true;
 
             selectedCountries.map((countryString, selectedIndex) => {
                 allApiData.Countries.map((apiCountryObj) => {
@@ -104,7 +101,6 @@ export default {
             }
 
             this.tableData = tableData;
-            this.tableLoading = false;
             this.activeData = activeArr;
             this.deathsData = deathsArr;
             this.recoveriesData = recoveriesArr;
