@@ -10,16 +10,16 @@ export const dataModulatorService = (selectedCountries, countriesApiData) => {
         totalRowObject: {},
     };
     const setCountryCovidData = (selectedCountryName, selectedCountryIndex) => {
-        const filteredData = countriesApiData.Countries.find(
+        const resultsData = countriesApiData.Countries.find(
             (apiCountryObj) => apiCountryObj.Country === selectedCountryName
         );
         if (countriesApiData) {
             let countryData = {
                 key: selectedCountryIndex,
-                countryName: filteredData.Country,
-                active: filteredData.TotalConfirmed,
-                deaths: filteredData.TotalDeaths,
-                recoveries: filteredData.TotalRecovered,
+                countryName: resultsData.Country,
+                active: resultsData.TotalConfirmed,
+                deaths: resultsData.TotalDeaths,
+                recoveries: resultsData.TotalRecovered,
             };
             totalDataObj.tableData.push(countryData);
             totalDataObj.activeArr.push(countryData.active);
