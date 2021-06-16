@@ -11,9 +11,7 @@
         <BarChart
             v-if="currentView === 'graph'"
             v-bind:selected="this.selected"
-            v-bind:activeData="this.dataModel.activeArr"
-            v-bind:deathsData="this.dataModel.deathsArr"
-            v-bind:recoveriesData="this.dataModel.recoveriesArr"
+            v-bind:dataObject="this.dataModel"
         />
     </div>
 </template>
