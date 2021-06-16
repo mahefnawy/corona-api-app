@@ -9,26 +9,25 @@ export const dataModulatorService = (selectedCountries, countriesApiData) => {
         totalRecoveries: 0,
         totalRowObject: {},
     };
-
-    selectedCountries.map((countryString, selectedIndex) => {
-        countriesApiData.Countries.map((apiCountryObj) => {
-            if (apiCountryObj.Country === countryString) {
-                let countryData = {
-                    key: selectedIndex,
-                    countryName: apiCountryObj.Country,
-                    active: apiCountryObj.TotalConfirmed,
-                    deaths: apiCountryObj.TotalDeaths,
-                    recoveries: apiCountryObj.TotalRecovered,
-                };
-
-                totalDataObj.tableData.push(countryData);
-                totalDataObj.activeArr.push(countryData.active);
-                totalDataObj.deathsArr.push(countryData.deaths);
-                totalDataObj.recoveriesArr.push(countryData.recoveries);
-            }
-        });
-    });
-
+    const setCountryCovidData = (selectedCountryName, selectedCountryIndex) => {
+        const filteredData = countriesApiData.Countries.find(
+            (apiCountryObj) => apiCountryObj.Country === selectedCountryName
+        );
+        if (countriesApiData) {
+            let countryData = {
+                key: selectedCountryIndex,
+                countryName: filteredData.Country,
+                active: filteredData.TotalConfirmed,
+                deaths: filteredData.TotalDeaths,
+                recoveries: filteredData.TotalRecovered,
+            };
+            totalDataObj.tableData.push(countryData);
+            totalDataObj.activeArr.push(countryData.active);
+            totalDataObj.deathsArr.push(countryData.deaths);
+            totalDataObj.recoveriesArr.push(countryData.recoveries);
+        }
+    };
+    selectedCountries.map(setCountryCovidData);
     if (totalDataObj.tableData.length > 0) {
         totalDataObj.tableData.map((tableDataObject) => {
             totalDataObj.totalActive += tableDataObject.active;
