@@ -7,11 +7,10 @@
             v-if="currentView === 'table'"
             v-bind:tableData="this.dataModel.tableData"
         />
-
         <BarChart
             v-if="currentView === 'graph'"
             v-bind:selected="this.selected"
-            v-bind:dataObject="this.dataModel"
+            v-bind:dataModel="this.dataModel"
         />
     </div>
 </template>
