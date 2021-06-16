@@ -6,6 +6,7 @@
         :value="selectedItems"
         style="width: 50%"
         @change="handleChange"
+        allowClear
     >
         <a-select-option
             v-for="item in filteredOptions"
