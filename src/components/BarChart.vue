@@ -16,15 +16,15 @@ export default {
             series: [
                 {
                     name: 'Active',
-                    data: this.activeData,
+                    data: this.dataObject.activeArr,
                 },
                 {
                     name: 'Deaths',
-                    data: this.deathsData,
+                    data: this.dataObject.deathsArr,
                 },
                 {
                     name: 'Recoveries',
-                    data: this.recoveriesData,
+                    data: this.dataObject.recoveriesArr,
                 },
             ],
             chartOptions: {
@@ -71,19 +71,15 @@ export default {
             },
         };
     },
-    props: ['selected', 'activeData', 'deathsData', 'recoveriesData'],
+    props: ['selected', 'dataObject'],
     watch: {
         selected: function(newSelected) {
             this.chartOptions.xaxis.categories = newSelected;
         },
-        activeData: function(newActiveData) {
-            this.series[0].data = newActiveData;
-        },
-        deathsData: function(newDeathsData) {
-            this.series[1].data = newDeathsData;
-        },
-        recoveriesData: function(newRecoveriesData) {
-            this.series[2].data = newRecoveriesData;
+        dataObject: function(newDataObject) {
+            this.series[0].data = newDataObject.activeArr;
+            this.series[1].data = newDataObject.deathsArr;
+            this.series[2].data = newDataObject.recoveriesArr;
         },
     },
 };
